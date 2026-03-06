@@ -75,8 +75,8 @@ img {
 
 /* Opcional: aumentar um pouco o tamanho do checkbox para facilitar o toque */
 input[type="checkbox"] {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     cursor: pointer; /* Muda o mouse para a "mãozinha" ao passar por cima */
     accent-color: #ff3131; /* Deixa a "marquinha" do check vermelha */
     filter: drop-shadow(0 0 5px #ff3131);
@@ -119,5 +119,6 @@ input[type="checkbox"]:checked + span + p {
     color: white;
 
 }
+
 
 
