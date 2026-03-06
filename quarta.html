@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treino Quarta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">    
+    <h1 class="titulo"> Protocolo - Shape de Guerreiro </h1>
+    <p>Treino 5x/Semana – Push/Pull/Legs</p>
+    </div>
+        <div class="container">
+            <div class="dia1">
+                <div class="segunda_feira">
+                    <div class="nome_dia">QUARTA-FEIRA</div>
+                     <h3>LEGS</h3>            
+                </div>
+                    <div class="exercicios">
+
+                        <div class="item1">
+                            <span>Bicicleta</span>
+                            <div class="linha-info">
+                                <p>3 séries / 10-12 repetições / 2-3' descanso</p>
+                                <button class="timer-btn" onclick="iniciarTimer(120, this)">⏱️ 2:00</button>
+                                <input type="checkbox" id="ex1">
+                            </div>
+                            <img src="imagens/bicicleta.gif">
+                        </div><!-- item1-->
+
+                        <div class="item2">
+                            <span>Agachamento Livre</span>
+                            <div class="linha-info">
+                                <p>4 séries / 6-8 repetições / 3-4' descanso</p>
+                                <button class="timer-btn" onclick="iniciarTimer(120, this)">⏱️ 2:00</button>
+                                <input type="checkbox" id="ex1">
+                            </div>
+                            <img src="imagens/pernas-e-costas-levantamento-terra-deadlift.gif">
+                        </div><!-- item2--> 
+
+                        <div class="item3">
+                            <span>Leg Press 45°</span>
+                            <div class="linha-info">    
+                                <p>3 séries / 10-12 repetições / 2-3' descanso</p>
+                                <button class="timer-btn" onclick="iniciarTimer(120, this)">⏱️ 2:00</button> 
+                                <input type="checkbox" id="ex1">
+                            </div>
+                            <img src="imagens/pernas-leg-press-45-com-pes-distantes.gif">
+                        </div> <!-- item3-->
+
+                        <div class="item4">
+                            <span>Cadeira Extensora</span>
+                            <div class="linha-info">
+                                <p>3 séries / 12-15 repetições / 2' descanso</p>
+                                <button class="timer-btn" onclick="iniciarTimer(120, this)">⏱️ 2:00</button>
+                                <input type="checkbox" id="ex1">
+                            </div>
+                            <img src="imagens/pernas-leg-press-45-com-pes-distantes.gif">
+                        </div><!-- item4-->
+
+                        <div class="item5">
+                            <span>Cadeira Flexora</span>
+                            <div class="linha-info">
+                                <p>3 séries / 12-15 repetições / 2' descanso</p>
+                                <button class="timer-btn" onclick="iniciarTimer(120, this)">⏱️ 2:00</button>
+                                <input type="checkbox" id="ex1">
+                            </div>
+                            <img src="imagens/cadeira-flexora.gif">                          
+                        </div><!-- item5-->
+
+                        <div class="item6">
+                            <span>Panturrilha em Pé</span>
+                            <div class="linha-info">
+                                <p>3 séries / 15-20 repetições / 2" descanso</p>
+                                <button class="timer-btn" onclick="iniciarTimer(120, this)">⏱️ 2:00</button>
+                                <input type="checkbox" id="ex1">
+                            </div>
+                            <img src="imagens/panturrilha.gif">
+                        </div><!-- item6-->
+                    </div>  <!-- exercicios-->                 
+                </div><!-- segunda_feira-->
+            </div> <!-- dia1-->
+        </div> <!-- container-->
+</body>
+<script>
+function iniciarTimer(segundos, botao) {
+    if (botao.classList.contains('rodando')) return; // Evita clicar duas vezes
+    
+    let tempoRestante = segundos;
+    botao.classList.add('rodando');
+    const textoOriginal = botao.innerText;
+
+    const intervalo = setInterval(() => {
+        let minutos = Math.floor(tempoRestante / 60);
+        let segs = tempoRestante % 60;
+        
+        // Formata para aparecer 0:00
+        botao.innerText = `⏳ ${minutos}:${segs < 10 ? '0' : ''}${segs}`;
+        
+        if (tempoRestante <= 0) {
+            clearInterval(intervalo);
+            botao.innerText = "✅ DESCANSO OK";
+            botao.classList.remove('rodando');
+            // Opcional: tocar um bipe ou vibrar o celular
+            alert("Hora de voltar para a série!"); 
+        }
+        tempoRestante--;
+    }, 1000);
+}
+</html>          </div><!-- segunda_feira-->
+            </div> <!-- dia1-->
+        </div> <!-- container-->
+</body>
+</html>

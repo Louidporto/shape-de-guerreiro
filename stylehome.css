@@ -1,0 +1,64 @@
+/* Reset e Fundo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #121212; /* Fundo preto fosco padrão */
+    color: #ffffff;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+h2 {
+    color: #ff3131; /* Seu vermelho de guerreiro */
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 49, 49, 0.5);
+    font-size: 2.9em;
+}
+
+/* O SEGREDO DA PROFUNDIDADE NOS CARDS */
+.botao-dia {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background-color: #1e1e1e; /* Um cinza levemente mais claro que o fundo */
+    margin-bottom: 20px;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #333; /* Borda sutil para definir o limite */
+    
+    /* Duas camadas de sombra para realismo */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6), 
+                0 6px 6px rgba(0, 0, 0, 0.4);
+    
+    transition: all 0.3s ease;
+}
+
+/* Efeito de "Pressionar" ao tocar no celular */
+.botao-dia:active {
+    transform: translateY(4px); /* O botão abaixa fisicamente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* A sombra encurta no toque */
+    background-color: #252525;
+}
+
+/* Destaque para o texto do dia */
+.botao-dia::first-line {
+    color: white;
+    font-size: 1.1em;
+    text-transform: uppercase;
+}
