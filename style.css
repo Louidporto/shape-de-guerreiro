@@ -107,11 +107,11 @@ input[type="checkbox"]:checked + span + p {
     background-color: #333;
     color: #ff3131;
     border: 1px solid #ff3131;
-    padding: 3px 3px;
-    border-radius: 3px;
+    padding: 5px 5px;
+    border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
-    font-size: 0.5em;    
+    font-size: 0.7em;    
 }
 
 .timer-btn.rodando {
@@ -119,6 +119,7 @@ input[type="checkbox"]:checked + span + p {
     color: white;
 
 }
+
 
 
 
