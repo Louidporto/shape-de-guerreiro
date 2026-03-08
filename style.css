@@ -98,7 +98,7 @@ input[type="checkbox"]:checked + span {
 }
 
 /* Também podemos riscar o parágrafo de séries se quiser */
-input[type="checkbox"]:checked + span + p {
+input[type="checkbox"]:checked + .span + .p {
     text-decoration: line-through;
     color: #444;
 }
@@ -119,6 +119,7 @@ input[type="checkbox"]:checked + span + p {
     color: white;
 
 }
+
 
 
 
