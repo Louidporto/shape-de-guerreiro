@@ -54,7 +54,7 @@ span {
 }
 
 p {
-    font-size: 0.5em;
+    font-size: 0.9em;
     color: #bbb; /* Cinza claro para o texto de apoio */
     margin-top: 5px;
 }
@@ -119,6 +119,7 @@ input[type="checkbox"]:checked + .span + .p {
     color: white;
 
 }
+
 
 
 
