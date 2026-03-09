@@ -7,7 +7,7 @@
   "theme_color": "#ff3131",
   "icons": [
     {
-      "src": "imagens/guerreiro.png",
+      "src": "imagens/guerreiro512.png",
       "sizes": "192x192",
       "type": "image/png"
     }
