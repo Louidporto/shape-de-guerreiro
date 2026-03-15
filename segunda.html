@@ -111,6 +111,28 @@ function iniciarTimer(segundos, botao) {
         tempoRestante--;
     }, 1000);
 }
+// 1. Selecionamos todos os checkboxes que têm a classe 'salvar-check'
+const checks = document.querySelectorAll('.salvar-check');
+
+// 2. Para cada um deles, adicionamos um "vigia" (EventListener)
+checks.forEach(check => {
+    check.addEventListener('change', () => {
+        // Quando mudar, guardamos o ID do botão e se ele está true (marcado) ou false
+        localStorage.setItem(check.id, check.checked);
+    });
+});
+
+// Este código roda assim que a página abre
+checks.forEach(check => {
+    // Vamos na gaveta (localStorage) ver se existe algo com o ID deste check
+    const marcado = localStorage.getItem(check.id);
+
+    // Se o que estiver guardado for "true", a gente marca o checkbox
+    if (marcado === 'true') {
+        check.checked = true;
+    }
+});
+
 </script>
 
 </html>
