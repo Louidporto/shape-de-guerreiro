@@ -23,9 +23,9 @@
                             <span>Supino Reto/Double Press</span>
                             <div class="linha-info">
                                 <p>4 séries / 6-8 repetições / 3' descanso</p>
-                                <button class="timer-btn" onclick="iniciarTimer(120, this)">⏱️ 2:00</button>
-                                <button class="timer-btn" onclick="iniciarTimer(120, this)">⏱️ 2:00</button>
-                                <button class="timer-btn" onclick="iniciarTimer(120, this)">⏱️ 2:00</button>
+                                <button class="timer-btn" id="seg-1-s1" onclick="iniciarTimer(120, this)">⏱️ 2:00</button>
+                                <button class="timer-btn" id="seg-2-s2" onclick="iniciarTimer(120, this)">⏱️ 2:00</button>
+                                <button class="timer-btn" id="seg-3-s3" onclick="iniciarTimer(120, this)">⏱️ 2:00</button>
                                 <input type="checkbox" id="seg-1" class="salvar-check">
                             </div>
                             <img src="imagens/supino-reto-com-halteres.gif">
@@ -90,51 +90,71 @@
 
 <script>
 function iniciarTimer(segundos, botao) {
-    if (botao.classList.contains('rodando')) return; // Evita clicar duas vezes
+    if (botao.classList.contains('rodando')) return; 
     
     let tempoRestante = segundos;
     botao.classList.add('rodando');
-    const textoOriginal = botao.innerText;
 
     const intervalo = setInterval(() => {
         let minutos = Math.floor(tempoRestante / 60);
         let segs = tempoRestante % 60;
         
-        // Formata para aparecer 0:00
         botao.innerText = `⏳ ${minutos}:${segs < 10 ? '0' : ''}${segs}`;
         
         if (tempoRestante <= 0) {
             clearInterval(intervalo);
             botao.innerText = "✅ DESCANSO OK";
             botao.classList.remove('rodando');
-            // Opcional: tocar um bipe ou vibrar o celular
+            
+            // 1. SALVAR TIMER: Quando o tempo acaba, registra no LocalStorage
+            localStorage.setItem(botao.id, "feito");
+            
+            // Estilo visual imediato
+            botao.style.backgroundColor = "#2e7d32"; 
+
             alert("Hora de voltar para a série!"); 
         }
         tempoRestante--;
     }, 1000);
 }
-// 1. Selecionamos todos os checkboxes que têm a classe 'salvar-check'
+
+// --- CONFIGURAÇÃO AO CARREGAR A PÁGINA ---
+
+// 2. CARREGAR CHECKBOXES
 const checks = document.querySelectorAll('.salvar-check');
 
-// 2. Para cada um deles, adicionamos um "vigia" (EventListener)
 checks.forEach(check => {
+    const marcado = localStorage.getItem(check.id);
+    if (marcado === 'true') {
+        check.checked = true;
+    }
+
+    // Vigia para salvar quando clicar
     check.addEventListener('change', () => {
-        // Quando mudar, guardamos o ID do botão e se ele está true (marcado) ou false
         localStorage.setItem(check.id, check.checked);
     });
 });
 
-// Este código roda assim que a página abre
-checks.forEach(check => {
-    // Vamos na gaveta (localStorage) ver se existe algo com o ID deste check
-    const marcado = localStorage.getItem(check.id);
+// 3. CARREGAR TIMERS
+// Aqui selecionamos todos os botões que têm a classe do timer
+const timers = document.querySelectorAll('.timer-btn');
 
-    // Se o que estiver guardado for "true", a gente marca o checkbox
-    if (marcado === 'true') {
-        check.checked = true;
+timers.forEach(botao => {
+    const estado = localStorage.getItem(botao.id);
+    
+    // Se o LocalStorage diz que já foi "feito", muda o visual dele
+    if (estado === "feito") {
+        botao.innerText = "✅ DESCANSO OK";
+        botao.style.backgroundColor = "#2e7d32"; // Cor verde de concluído
     }
 });
 
+// 4. FUNÇÃO PARA RESETAR TUDO (Bônus para o seu próximo passo)
+function resetarTreino() {
+    if (confirm("Deseja limpar todo o progresso de hoje?")) {
+        localStorage.clear();
+        location.reload(); // Recarrega a página para limpar visualmente
+    }
+}
 </script>
-
 </html>
