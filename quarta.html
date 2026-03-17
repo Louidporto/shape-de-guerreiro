@@ -85,28 +85,71 @@
 </body>
 <script>
 function iniciarTimer(segundos, botao) {
-    if (botao.classList.contains('rodando')) return; // Evita clicar duas vezes
+    if (botao.classList.contains('rodando')) return; 
     
     let tempoRestante = segundos;
     botao.classList.add('rodando');
-    const textoOriginal = botao.innerText;
 
     const intervalo = setInterval(() => {
         let minutos = Math.floor(tempoRestante / 60);
         let segs = tempoRestante % 60;
         
-        // Formata para aparecer 0:00
         botao.innerText = `⏳ ${minutos}:${segs < 10 ? '0' : ''}${segs}`;
         
         if (tempoRestante <= 0) {
             clearInterval(intervalo);
             botao.innerText = "✅ DESCANSO OK";
             botao.classList.remove('rodando');
-            // Opcional: tocar um bipe ou vibrar o celular
+            
+            // 1. SALVAR TIMER: Quando o tempo acaba, registra no LocalStorage
+            localStorage.setItem(botao.id, "feito");
+            
+            // Estilo visual imediato
+            botao.style.backgroundColor = "#2e7d32"; 
+
             alert("Hora de voltar para a série!"); 
         }
         tempoRestante--;
     }, 1000);
+}
+
+// --- CONFIGURAÇÃO AO CARREGAR A PÁGINA ---
+
+// 2. CARREGAR CHECKBOXES
+const checks = document.querySelectorAll('.salvar-check');
+
+checks.forEach(check => {
+    const marcado = localStorage.getItem(check.id);
+    if (marcado === 'true') {
+        check.checked = true;
+    }
+
+    // Vigia para salvar quando clicar
+    check.addEventListener('change', () => {
+        localStorage.setItem(check.id, check.checked);
+    });
+});
+
+// 3. CARREGAR TIMERS
+// Aqui selecionamos todos os botões que têm a classe do timer
+const timers = document.querySelectorAll('.timer-btn');
+
+timers.forEach(botao => {
+    const estado = localStorage.getItem(botao.id);
+    
+    // Se o LocalStorage diz que já foi "feito", muda o visual dele
+    if (estado === "feito") {
+        botao.innerText = "✅ DESCANSO OK";
+        botao.style.backgroundColor = "#2e7d32"; // Cor verde de concluído
+    }
+});
+
+// 4. FUNÇÃO PARA RESETAR TUDO (Bônus para o seu próximo passo)
+function resetarTreino() {
+    if (confirm("Deseja limpar todo o progresso de hoje?")) {
+        localStorage.clear();
+        location.reload(); // Recarrega a página para limpar visualmente
+    }
 }
 </script>
 
