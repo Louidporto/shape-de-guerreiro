@@ -120,6 +120,27 @@ input[type="checkbox"]:checked + .span + .p {
     color: white;
 
 }
+.controles-finais {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.btn-reset {
+    background-color: #ff3131; /* Vermelho padrão do seu projeto */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 49, 49, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-reset:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
 
 
 
