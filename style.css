@@ -141,7 +141,50 @@ input[type="checkbox"]:checked + .span + .p {
     transform: scale(0.95);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
+/* Container para alinhar nome e peso */
+.nome-exercicio-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaço entre o nome e o input */
+    margin-bottom: 5px;
+}
 
+/* Estilização do Input de Peso */
+.input-peso {
+    background: #1e1e1e; /* Fundo escuro combinando com o tema */
+    border: 1px solid #333;
+    border-bottom: 2px solid #ff3131; /* Linha vermelha embaixo para destaque */
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    width: 50px; /* Largura pequena só para o número */
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Efeito quando você clica para digitar */
+.input-peso:focus {
+    border-color: #ff3131;
+    background: #2a2a2a;
+    box-shadow: 0 0 10px rgba(255, 49, 49, 0.2);
+}
+
+/* Remove as setinhas padrão do input de número para ficar mais limpo */
+.input-peso::-webkit-inner-spin-button,
+.input-peso::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Estilo do "kg" ao lado */
+.nome-exercicio-container label {
+    color: #888;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
 
 
 
