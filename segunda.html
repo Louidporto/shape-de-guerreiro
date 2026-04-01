@@ -164,9 +164,14 @@ timers.forEach(botao => {
 
 // 4. FUNÇÃO PARA RESETAR TUDO (Bônus para o seu próximo passo)
 function resetarTreino() {
-    if (confirm("Deseja limpar todo o progresso de hoje?")) {
+    // 1. Perguntamos ao usuário se ele tem certeza (evita cliques acidentais)
+    if (confirm("Guerreiro, deseja limpar o progresso e começar o treino do zero?")) {
+        
+        // 2. Limpamos TUDO que está no localStorage
         localStorage.clear();
-        location.reload(); // Recarrega a página para limpar visualmente
+        
+        // 3. Recarregamos a página para que os checks sumam e os botões voltem ao normal
+        location.reload();
     }
 }
 </script>
