@@ -107,18 +107,26 @@ input[type="checkbox"]:checked + .span + .p {
     background-color: #333;
     color: #ff3131;
     border: 1px solid #ff3131;
-    padding: 5px 5px;
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
-    font-size: 0.7em; 
-	margin-bottom: 10px;
+    font-size: 0.75em; /* Aumentei um pouco para facilitar o toque no celular */
+    margin-bottom: 10px;
+    
+    /* --- AS MUDANÇAS ESTÃO AQUI --- */
+    width: 90px;           /* Define um tamanho fixo horizontal */
+    height: 35px;          /* Define uma altura fixa vertical */
+    padding: 0;            /* Removemos o padding para o tamanho ser exato */
+    display: inline-flex;  /* Flexbox para centralizar o texto */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;   /* Impede que o texto pule linha */
 }
 
 .timer-btn.rodando {
     background-color: #ff3131;
     color: white;
-
 }
 .controles-finais {
     text-align: center;
