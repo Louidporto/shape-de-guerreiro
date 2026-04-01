@@ -204,15 +204,19 @@ inputsPeso.forEach(input => {
 
 // 5. FUNÇÃO PARA RESETAR TUDO (Bônus para o seu próximo passo)
 function resetarTreino() {
-    // 1. Perguntamos ao usuário se ele tem certeza (evita cliques acidentais)
-    if (confirm("Guerreiro, deseja limpar o progresso e começar o treino do zero?")) {
-        
-        // 2. Limpamos TUDO que está no localStorage
-        localStorage.clear();
-        
-        // 3. Recarregamos a página para que os checks sumam e os botões voltem ao normal
+// 1. Perguntamos ao usuário se ele tem certeza (evita cliques acidentais)
+// 1. Pegamos todas as "chaves" salvas no LocalStorage
+        Object.keys(localStorage).forEach(chave => {
+            
+            // 2. Verificamos se a chave NÃO começa com a palavra 'peso'
+            if (!chave.startsWith('peso')) {
+                // Se não for peso, a gente remove!
+                localStorage.removeItem(chave);
+            }
+        });
+
+        // 3. Recarrega para atualizar a tela
         location.reload();
     }
-}
 </script>
 </html>
