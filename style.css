@@ -45,6 +45,7 @@ body {
     padding: 15px;
     border-radius: 8px;
     position: relative; /* Ajuda a posicionar o checkbox depois */
+	gap:5px;
 }
 
 span {
@@ -155,6 +156,7 @@ input[type="checkbox"]:checked + .span + .p {
     align-items: center;
     gap: 10px; /* Espaço entre o nome e o input */
     margin-bottom: 5px;
+	gap:5px;
 }
 
 /* Estilização do Input de Peso */
