@@ -45,7 +45,6 @@ body {
     padding: 15px;
     border-radius: 8px;
     position: relative; /* Ajuda a posicionar o checkbox depois */
-	gap:5px;
 }
 
 span {
