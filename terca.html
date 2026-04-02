@@ -20,13 +20,15 @@
                     <div class="exercicios">
 
                         <div class="item1">
-                            <span>Puxada Frontal</span>
+                            <div class="nome-exercicio-container">
+                                <span>Puxada Frontal</span>
+                                <input type="number" id="peso-ter-1" class="input-peso" placeholder="0">
+                                <label>kg</label>
+                            </div>                          
                             
                             <div class="linha-info">
                                 <p>3 séries / 6-8 repetições / 2-3' descanso</p>
-                                <button class="timer-btn" id="seg-1-s1" onclick="iniciarTimer(120, this)">⏱️ 2:00</button>
-                                <button class="timer-btn" id="seg-2-s2" onclick="iniciarTimer(120, this)">⏱️ 2:00</button>
-                                <button class="timer-btn" id="seg-3-s3" onclick="iniciarTimer(120, this)">⏱️ 2:00</button>
+                                <button class="timer-btn" id="ter-1" onclick="iniciarTimer(90, this)">⏱️1:30</button>
                                 <input type="checkbox" id="ter-1" class="salvar-check">
                             </div>
                             
@@ -34,60 +36,74 @@
                         </div><!-- item1-->
 
                         <div class="item2">
-                            <span>Puxada Triângulo</span>
+                            
+                            <div class="nome-exercicio-container">
+                                <span>Puxada Triângulo</span>
+                                <input type="number" id="peso-ter-2" class="input-peso" placeholder="0">
+                                <label>kg</label>
+                            </div>                
                             <div class="linha-info">
                                 <p>3 séries / 10-15 repetições / 2-3' descanso</p>
-                                <button class="timer-btn" id="seg-1-s1" onclick="iniciarTimer(120, this)">⏱️ 2:00</button>
-                                <button class="timer-btn" id="seg-2-s2" onclick="iniciarTimer(120, this)">⏱️ 2:00</button>
-                                <button class="timer-btn" id="seg-3-s3" onclick="iniciarTimer(120, this)">⏱️ 2:00</button>
+                                <button class="timer-btn" id="ter-2" onclick="iniciarTimer(90, this)">⏱️1:30</button>
                                 <input type="checkbox" id="ter-2" class="salvar-check">
                             </div>
                             <img src="imagens/costas-puxada-para-frente-no-pulley-com-triangulo.gif">
                         </div><!-- item2-->
 
                         <div class="item3">
-                            <span>Remada Unilateral Maquina</span>
+                            <div class="nome-exercicio-container">
+                                <span>Remada Unilateral Maquina</span>
+                                <input type="number" id="peso-ter-3" class="input-peso" placeholder="0">
+                                <label>kg</label>
+                            </div>                            
+                            
                             <div class="linha-info">    
                                 <p>3 séries / 10-15 repetições / 2-3' descanso</p>
-                                <button class="timer-btn" id="seg-1-s1" onclick="iniciarTimer(120, this)">⏱️ 2:00</button>
-                                <button class="timer-btn" id="seg-2-s2" onclick="iniciarTimer(120, this)">⏱️ 2:00</button>
-                                <button class="timer-btn" id="seg-3-s3" onclick="iniciarTimer(120, this)">⏱️ 2:00</button>
+                                <button class="timer-btn" id="ter-3" onclick="iniciarTimer(90, this)">⏱️1:30</button>
                                 <input type="checkbox" id="ter-3" class="salvar-check">
                             </div>
                             <img src="imagens/remada_unilateral_maq.gif">
                         </div> <!-- item3-->
                         
                         <div class="item4">
-                            <span>Deltoide Posterior Maquina/Crucifixo Inverso</span>
+                            
+                           <div class="nome-exercicio-container">
+                                <span>Deltoide Posterior Maquina/Crucifixo Inverso</span>
+                                <input type="number" id="peso-ter-4" class="input-peso" placeholder="0">
+                                <label>kg</label>
+                            </div>
                             <div class="linha-info">
                                 <p>2 séries / 10-15 repetições / 2' descanso</p>
-                                <button class="timer-btn" id="seg-1-s1" onclick="iniciarTimer(120, this)">⏱️ 2:00</button>
-                                <button class="timer-btn" id="seg-2-s2" onclick="iniciarTimer(120, this)">⏱️ 2:00</button>
-                                <button class="timer-btn" id="seg-3-s3" onclick="iniciarTimer(120, this)">⏱️ 2:00</button>
+                                <button class="timer-btn" id="ter-4" onclick="iniciarTimer(90, this)">⏱️1:30</button>
                                 <input type="checkbox" id="ter-4" class="salvar-check">
                             </div>
                             <img src="imagens/Crucifixo-inverso-na-maquina-como-fazer-musculos.gif">
                         </div><!-- item4-->
 
-                        <div class="item5">
-                            <span>Rosca Barra W</span>
+                        <div class="item5">                           
+                           <div class="nome-exercicio-container">
+                                 <span>Rosca Barra W</span>
+                                <input type="number" id="peso-ter-5" class="input-peso" placeholder="0">
+                                <label>kg</label>
+                            </div
                             <div class="linha-info">
                                 <p>2 séries / 12-15 repetições / descanso</p>
-                                <button class="timer-btn" id="seg-1-s1" onclick="iniciarTimer(120, this)">⏱️ 2:00</button>
-                                <button class="timer-btn" id="seg-2-s2" onclick="iniciarTimer(120, this)">⏱️ 2:00</button>
-                                <button class="timer-btn" id="seg-3-s3" onclick="iniciarTimer(120, this)">⏱️ 2:00</button>
+                                    <button class="timer-btn" id="ter-5" onclick="iniciarTimer(90, this)">⏱️1:30</button>
                                 <input type="checkbox" id="ter-5" class="salvar-check">
                             </div>
                             <img src="imagens/rosca-biceps-direta-na-barra-ez.gif">
                         </div><!-- item5-->
 
                         <div class="item6">                            
-                            <span>Rosca Alternada Banco Inclinado</span>
+                            
+                            <div class="nome-exercicio-container">
+                                 <span>Rosca Alternada Banco Inclinado</span>
+                                <input type="number" id="peso-ter-6" class="input-peso" placeholder="0">
+                                <label>kg</label>
+                            </div
                             <div class="linha-info">
                                 <p>3 séries / 10-15 repetições / 2' descanso</p>
-                                 <button class="timer-btn" id="seg-1-s1" onclick="iniciarTimer(120, this)">⏱️ 2:00</button>
-                                <button class="timer-btn" id="seg-2-s2" onclick="iniciarTimer(120, this)">⏱️ 2:00</button>
-                                <button class="timer-btn" id="seg-3-s3" onclick="iniciarTimer(120, this)">⏱️ 2:00</button>
+                                 <button class="timer-btn" id="ter-6" onclick="iniciarTimer(90, this)">⏱️1:30</button>
                                 <input type="checkbox" id="ter-6" class="salvar-check">
                             </div>
                              <img src="imagens/rosca-biceps-com-halteres-no-banco-inclinado.gif">
