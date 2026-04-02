@@ -154,13 +154,37 @@ timers.forEach(botao => {
     }
 });
 
-// 4. FUNÇÃO PARA RESETAR TUDO (Bônus para o seu próximo passo)
-function resetarTreino() {
-    if (confirm("Deseja limpar todo o progresso de hoje?")) {
-        localStorage.clear();
-        location.reload(); // Recarrega a página para limpar visualmente
+// 4. PESOS (A NOVIDADE: Salvar e Carregar)
+const inputsPeso = document.querySelectorAll('.input-peso');
+inputsPeso.forEach(input => {
+    // Carregar: Busca o peso salvo na gaveta e coloca no campo
+    const pesoSalvo = localStorage.getItem(input.id);
+    if (pesoSalvo) {
+        input.value = pesoSalvo;
     }
-}
+
+    // Salvar: Toda vez que você digitar, ele grava no LocalStorage
+    input.addEventListener('input', () => {
+        localStorage.setItem(input.id, input.value);
+    });
+});
+
+// 5. FUNÇÃO PARA RESETAR TUDO (Bônus para o seu próximo passo)
+function resetarTreino() {
+// 1. Perguntamos ao usuário se ele tem certeza (evita cliques acidentais)
+// 1. Pegamos todas as "chaves" salvas no LocalStorage
+        Object.keys(localStorage).forEach(chave => {
+            
+            // 2. Verificamos se a chave NÃO começa com a palavra 'peso'
+            if (!chave.startsWith('peso')) {
+                // Se não for peso, a gente remove!
+                localStorage.removeItem(chave);
+            }
+        });
+
+        // 3. Recarrega para atualizar a tela
+        location.reload();
+    }
 </script>
 
 </html>
