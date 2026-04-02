@@ -114,8 +114,8 @@ input[type="checkbox"]:checked + .span + .p {
     margin-bottom: 10px;
     
     /* --- AS MUDANÇAS ESTÃO AQUI --- */
-    width: 70px;           /* Define um tamanho fixo horizontal */
-    height: 15px;          /* Define uma altura fixa vertical */
+    width: 50px;           /* Define um tamanho fixo horizontal */
+    height: 25px;          /* Define uma altura fixa vertical */
     padding: 0;            /* Removemos o padding para o tamanho ser exato */
     display: inline-flex;  /* Flexbox para centralizar o texto */
     align-items: center;
