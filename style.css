@@ -70,7 +70,7 @@ img {
 .linha-info {
     display: flex;             /* Ativa o alinhamento lado a lado */
     align-items: center;       /* Centraliza verticalmente (o check não fica torto) */
-    justify-content: space-around; /* Empurra o texto para a esquerda e o check para a direita */
+    justify-content: space-between; /* Empurra o texto para a esquerda e o check para a direita */
     margin-top: 5px;           /* Dá um espacinho em relação ao título (span) */
 	gap:5px;
 	justify-content: center; /* Centro horizontal */
